@@ -18,11 +18,60 @@ public class BinarySearch {
         nElems = 0;
     }
 
+    /**
+     * 无序插入
+     *
+     * @param value
+     */
     public void insert(long value) {
         array[nElems] = value;
         nElems++;
     }
 
+    /**
+     * 有序插入 - 从小到达排序
+     *
+     * @param value
+     */
+    public void orderInsert(long value) {
+        int j;
+        for (j = 0; j < nElems; j++) {
+            if (array[j] > value) {
+                break;
+            }
+        }
+        for (int i = nElems; i > j; i--) {
+            array[i] = array[i - 1];
+        }
+        array[j] = value;
+        nElems++;
+    }
+
+    /**
+     * 插入 - 从大到小排序
+     *
+     * @param value
+     */
+    public void orderBigInsert(long value) {
+        int j;
+        for (j = 0; j < nElems; j++) {
+            if (array[j] < value) {
+                break;
+            }
+        }
+        for (int i = nElems; i > j; i--) {
+            array[i] = array[i - 1];
+        }
+        array[j] = value;
+        nElems++;
+    }
+
+    /**
+     * 二分查找
+     *
+     * @param searchKey
+     * @return
+     */
     public int find(long searchKey) {
         int lowerBound = 0;
         int upperBound = nElems - 1;
@@ -44,6 +93,12 @@ public class BinarySearch {
                     upperBound = currentBound - 1;
                 }
             }
+        }
+    }
+
+    public void dispalay() {
+        for (long a : array) {
+            System.out.println(a);
         }
     }
 

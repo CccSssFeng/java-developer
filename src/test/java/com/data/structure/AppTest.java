@@ -1,4 +1,4 @@
-package com.dataStructure;
+package com.data.structure;
 
 import static org.junit.Assert.assertTrue;
 
