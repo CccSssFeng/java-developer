@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author cuishifeng
@@ -11,17 +12,39 @@ import java.util.HashMap;
  */
 public class HashMapLearn {
 
+
+    @Test
+    public void test8() throws Exception {
+
+        HashMap hashMap = new HashMap(12);
+        hashMap.put("hello.txt", 123);
+        System.out.println(hashMap);
+
+        ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
+
+    }
+
+    static final int tableSizeFor(int cap) {
+        int n = cap - 1;
+        n |= n >>> 1;
+        n |= n >>> 2;
+        n |= n >>> 4;
+        n |= n >>> 8;
+        n |= n >>> 16;
+        return (n < 0) ? 1 : (n >= Integer.MAX_VALUE) ? Integer.MAX_VALUE : n + 1;
+    }
+
     public static void main(String[] args) {
 
         HashMap hashMap = new HashMap(16);
+        hashMap.put("hello.txt", "you");
 
-        hashMap.put("hello", "you");
-
-        hashMap.get("hello");
+        System.out.println(tableSizeFor(100));
+        hashMap.get("hello.txt");
 
         for (int i = 0; i < 20; i++) {
             // 1. 使用 Collections.synchronizedMap 实现线程安全操作
-            Collections.synchronizedMap(hashMap).put("hello" + i, i);
+            Collections.synchronizedMap(hashMap).put("hello.txt" + i, i);
         }
 
         hashMap.forEach((k, v) -> System.out.println(k + " - " + v));
@@ -68,7 +91,7 @@ public class HashMapLearn {
 
     @Test
     public void test3() throws Exception {
-        int i = hash("hello");
+        int i = hash("hello.txt");
         System.out.println(i);
     }
 

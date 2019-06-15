@@ -28,17 +28,6 @@
             <artifactId>junit</artifactId>
             <version>4.11</version>
         </dependency>
-
-        <dependency>
-            <groupId>com.bj58.spat</groupId>
-            <artifactId>com.bj58.spat.scf.client</artifactId>
-            <version>2.2.22</version>
-        </dependency>
-        <dependency>
-            <groupId>com.bj58.esc</groupId>
-            <artifactId>com.bj58.escshichang.contract</artifactId>
-            <version>1.1.2-SNAPSHOT</version>
-        </dependency>
     </dependencies>
 
     <build>
