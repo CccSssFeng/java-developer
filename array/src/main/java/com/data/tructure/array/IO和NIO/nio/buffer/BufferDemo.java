@@ -1,4 +1,4 @@
-package com.data.tructure.array.IO和NIO.nio;
+package com.data.tructure.array.IO和NIO.nio.buffer;
 
 import org.junit.Test;
 

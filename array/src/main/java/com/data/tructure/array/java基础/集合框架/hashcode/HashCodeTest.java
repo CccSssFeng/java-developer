@@ -1,8 +1,6 @@
-package com.data.tructure.array.java基础.hashcode;
+package com.data.tructure.array.java基础.集合框架.hashcode;
 
 import org.junit.Test;
-
-import java.util.Date;
 
 /**
  * @author cuishifeng

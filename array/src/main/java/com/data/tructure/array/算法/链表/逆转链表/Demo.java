@@ -32,7 +32,6 @@ public class Demo {
             temp = cur.next;
             // 2. 把后节点的指向的节点替换成前节点
             cur.next = pre;
-
             // 下一轮要替换的前节点和后节点
             // 第一次 pre = 1 cur =2  || 那第二次 就得 pre = 2 cur = 3
             pre = cur;
@@ -42,7 +41,34 @@ public class Demo {
         head.next = null;
         // 因为循环的条件是cur是否为null 如果cur为null 那 pre将是原来链表的尾节点
         // 就是逆转后的首节点
-        return pre;
+        return cur;
+    }
+
+    @Test
+    public void test2() throws Exception {
+        Node node = Node.getNode();
+        Node pre = node;
+        pre.next = new Node(10, null);
+        Node.nodePrint(node);
+        System.out.println("---------------");
+        Node.nodePrint(pre);
+    }
+
+    @Test
+    public void test66() throws Exception {
+        Node node = recursionNode(Node.getNode());
+        Node.nodePrint(node);
+    }
+
+
+    public Node recursionNode(Node head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        Node node = recursionNode(head.next);
+        head.next.next = head;
+        head.next = null;
+        return node;
     }
 
 }

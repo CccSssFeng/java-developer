@@ -36,4 +36,30 @@ public class TestOne {
     }
 
 
+    public Node reverseNode(Node head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        // head 1 2 3 4
+        Node node = reverseNode(head.next);
+        // 展示顺序 head 4 3 2 1
+
+        // 第一轮：
+        // 当前指向顺序 4 -> 5
+
+        head.next.next = head; // 变成了 5 -> 4 但是4的指针仍然指向5 也就是双向的
+        // 所以 4 -> null 变成单向
+        head.next = null;
+
+        // node是最后一个元素 5 也就是逆转后的 第一个元素
+        return node;
+    }
+
+    @Test
+    public void test3() throws Exception {
+        Node node = reverseNode(Node.getNode());
+        Node.nodePrint(node);
+    }
+
+
 }
