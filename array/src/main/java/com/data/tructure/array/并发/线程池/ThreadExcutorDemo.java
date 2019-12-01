@@ -17,7 +17,7 @@ public class ThreadExcutorDemo {
                     5,
                     1,
                     TimeUnit.SECONDS,
-                    new ArrayBlockingQueue<Runnable>(2),
+                    new LinkedBlockingDeque<>(2),
                     Executors.defaultThreadFactory(),
                     new ThreadPoolExecutor.DiscardPolicy());
     // 拒绝策略
@@ -53,24 +53,96 @@ public class ThreadExcutorDemo {
 //        TimeUnit.SECONDS.sleep(20);
     }
 
-    public static void main(String[] args) {
-        ThreadPoolExecutor executor =
-                new ThreadPoolExecutor(1,
-                        1, 100000, TimeUnit.MILLISECONDS,
-                        new ArrayBlockingQueue<Runnable>(5));
-        for (int i = 0; i < 20; i++) {
-            executor.execute(new Runnable() {
+
+    // 异常捕获
+
+    @Test
+    public void test1() throws Exception {
+        ExecutorService executorService = Executors.newFixedThreadPool(5);
+        for (int i = 0; i < 5; i++) {
+            executorService.submit(new Runnable() {
                 @Override
                 public void run() {
-                    System.out.println("name: " + Thread.currentThread().getName());
                     try {
-                        TimeUnit.SECONDS.sleep(60);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
+                        System.out.println("name: " + Thread.currentThread().getName());
+                        Object a = null;
+                        System.out.println(a.hashCode());
+                    } catch (Exception e) {
+                        System.out.println(e);
                     }
                 }
             });
         }
     }
+
+    @Test
+    public void newFixedThreadPool() throws Exception {
+        ExecutorService executorService = Executors.newFixedThreadPool(5);
+        for (int i = 0; i < 20; i++) {
+            Future<?> future = executorService.submit(new Runnable() {
+                @Override
+                public void run() {
+                    System.out.println("name: " + Thread.currentThread().getName());
+                    Object a = null;
+                    System.out.println(a.hashCode());
+                }
+            });
+            try {
+                future.get();
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        }
+    }
+
+
+    @Test
+    public void newCachedThreadPool() throws Exception {
+        // https://www.jianshu.com/p/376d368cb44f
+        // https://segmentfault.com/a/1190000011207824
+
+        ExecutorService executorService = Executors.newCachedThreadPool();
+        executorService.execute(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("hello newCachedThreadPool");
+            }
+        });
+    }
+
+    @Test
+    public void newSingleThreadExecutor() throws Exception {
+
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        for (int i = 0; i < 10; i++) {
+            executorService.execute(new Runnable() {
+                @Override
+                public void run() {
+                    System.out.println("thread: " + Thread.currentThread().getName());
+                }
+            });
+        }
+
+        TimeUnit.MILLISECONDS.sleep(1000);
+    }
+
+    @Test
+    public void newScheduledThreadPool() throws Exception {
+
+        ScheduledExecutorService executorService = Executors.newScheduledThreadPool(1);
+
+        executorService.scheduleWithFixedDelay(() -> {
+            System.out.println("current Time" + System.currentTimeMillis());
+            System.out.println(Thread.currentThread().getName() + "正在执行");
+        }, 1, 5, TimeUnit.SECONDS);
+
+        executorService.scheduleAtFixedRate(() -> {
+            System.out.println("current Time" + System.currentTimeMillis());
+            System.out.println(Thread.currentThread().getName() + "正在执行");
+        }, 1, 10, TimeUnit.SECONDS);
+
+        TimeUnit.DAYS.sleep(1);
+    }
+
 
 }
