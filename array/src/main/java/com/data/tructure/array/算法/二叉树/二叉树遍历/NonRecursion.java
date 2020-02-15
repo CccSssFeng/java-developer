@@ -1,4 +1,4 @@
-package com.data.tructure.array.算法.二叉树.先序遍历;
+package com.data.tructure.array.算法.二叉树.二叉树遍历;
 
 import com.data.tructure.array.算法.二叉树.BinaryTreeNode;
 import org.junit.Test;
@@ -104,13 +104,7 @@ public class NonRecursion {
 
     @Test
     public void test() throws Exception {
-        long s = System.currentTimeMillis();
-        List<Integer> list = preTraverseTree(BinaryTreeNode.getTreeNode());
-        long e = System.currentTimeMillis();
-        System.out.println("time: " + (e - s));
-        for (Integer value : list) {
-            System.out.println(value);
-        }
+        after(BinaryTreeNode.getTreeNode());
     }
 
 

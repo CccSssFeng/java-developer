@@ -113,6 +113,7 @@ public class BufferDemo {
     public void test() throws Exception {
 
         ByteBuffer buffer = ByteBuffer.allocate(1024);
+        ByteBuffer.allocateDirect(1024);
 
         String str = "abc123";
         buffer.put(str.getBytes());
@@ -315,8 +316,8 @@ public class BufferDemo {
         String[] src = {"1", "2"};
         System.arraycopy(src, 0, hb, 0, src.length);
 
-        for (String st : hb){
-            System.out.print(st+" - ");
+        for (String st : hb) {
+            System.out.print(st + " - ");
         }
     }
 

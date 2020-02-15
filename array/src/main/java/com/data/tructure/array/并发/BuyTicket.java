@@ -1,9 +1,10 @@
 package com.data.tructure.array.并发;
 
 import com.data.tructure.array.并发.Lock.AQS.MyAbstractQueuedSynchronizer;
+import org.junit.Test;
+import sun.misc.Unsafe;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class BuyTicket implements Runnable {
@@ -18,10 +19,7 @@ public class BuyTicket implements Runnable {
 
     @Override
     public void run() {
-        //买票
-//        while (flag) {
-            buyTicket();
-//        }
+        buyTicket();
     }
 
     public void buyTicket() {
@@ -48,7 +46,7 @@ public class BuyTicket implements Runnable {
 
     public static void main(String[] args) {
         BuyTicket synTest = new BuyTicket();
-//
+
 //        Thread A = new Thread(synTest, "A");
 //        Thread B = new Thread(synTest, "B");
 //        Thread C = new Thread(synTest, "C");
@@ -64,7 +62,65 @@ public class BuyTicket implements Runnable {
             executorService.execute(synTest);
         }
 
+    }
+
+
+    @Test
+    public void unsafeTest() throws Exception {
+        // Unsafe讲解
+        // https://juejin.im/entry/59a6775d6fb9a0249d617cb8
+
+        // 类加载器
+        // https://www.cnblogs.com/crazymakercircle/p/9824111.html
+
+        Unsafe unsafe = Unsafe.getUnsafe();
+        // Unsafe unsafe = new Unsafe();
+
+        AtomicInteger atomicInteger = new AtomicInteger();
 
     }
+
+    @Test
+    public void SynchronousQueue() throws Exception {
+
+        ExecutorService service =
+                new ThreadPoolExecutor(2, 10, 100, TimeUnit.MILLISECONDS,
+                        new LinkedBlockingDeque<>(2), new ThreadPoolExecutor.CallerRunsPolicy());
+
+        CyclicBarrier cyclicBarrier = new CyclicBarrier(11);
+        CountDownLatch countDownLatch = new CountDownLatch(10);
+
+        for (int i = 0; i < 10; i++) {
+            int finalI = i;
+            service.execute(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        TimeUnit.MILLISECONDS.sleep(2000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println("thread name :" + Thread.currentThread().getName() + " i: " + finalI);
+                    try {
+                        cyclicBarrier.await();
+//                        countDownLatch.countDown();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+        }
+
+//        countDownLatch.await();
+        cyclicBarrier.await();
+        System.out.println("hello yes");
+
+        try {
+            TimeUnit.MILLISECONDS.sleep(100000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }
