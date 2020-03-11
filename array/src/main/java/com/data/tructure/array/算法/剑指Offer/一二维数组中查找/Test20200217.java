@@ -13,13 +13,13 @@ public class Test20200217 {
     @Test
     public void test() throws Exception {
         int[][] array = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
-        System.out.println(find(array, 5));
+        System.out.println(find(array, -5));
     }
 
     public boolean find(int[][] array, int target) {
         int c = array.length - 1;
         int r = 0;
-        while (r < array.length - 1 && c >= 0) {
+        while (r < array.length && c >= 0) {
             if (array[r][c] == target)
                 return true;
             if (array[r][c] > target)
