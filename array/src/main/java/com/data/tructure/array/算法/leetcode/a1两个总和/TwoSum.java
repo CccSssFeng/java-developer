@@ -1,4 +1,4 @@
-package com.data.tructure.array.算法.leetcode.A两个总和;
+package com.data.tructure.array.算法.leetcode.a1两个总和;
 
 import org.junit.Test;
 

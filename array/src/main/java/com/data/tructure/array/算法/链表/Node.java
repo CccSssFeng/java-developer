@@ -14,6 +14,10 @@ public class Node {
         this.next = next;
     }
 
+    public Node(int val) {
+        this.val = val;
+    }
+
     public static Node getNode() {
         Node node5 = new Node(5, null);
         Node node4 = new Node(4, node5);

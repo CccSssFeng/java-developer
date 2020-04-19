@@ -1,4 +1,4 @@
-package com.data.tructure.array.算法.leetcode.B反向整数;
+package com.data.tructure.array.算法.leetcode.a2反向整数;
 
 import org.junit.Test;
 

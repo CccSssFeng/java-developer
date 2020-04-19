@@ -18,6 +18,10 @@ public class Demo {
 
     // 1->2->3->4->5
 
+    /*
+     * 这个结果是错误的
+     */
+    @Deprecated
     public Node rotate(Node head, int index) {
         if (head == null || head.next == null || index <= 0) {
             return head;
@@ -34,9 +38,9 @@ public class Demo {
         }
         temp.next = head;
         int i = 1;
-        while (i != index){
+        while (i != index) {
             i++;
-            head=head.next;
+            head = head.next;
         }
         Node newHead = head.next;
         head.next = null;
