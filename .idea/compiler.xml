@@ -2,17 +2,20 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="array" />
         <module name="bubble-sort" />
+        <module name="com.data.salad" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="array" target="1.8" />
       <module name="bubble-sort" target="1.8" />
+      <module name="com.data.salad" target="1.8" />
       <module name="dataLearn" target="1.8" />
     </bytecodeTargetLevel>
   </component>

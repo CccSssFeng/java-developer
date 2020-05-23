@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/array/array.iml" filepath="$PROJECT_DIR$/array/array.iml" />
       <module fileurl="file://$PROJECT_DIR$/bubble-sort/bubble-sort.iml" filepath="$PROJECT_DIR$/bubble-sort/bubble-sort.iml" />
+      <module fileurl="file://$PROJECT_DIR$/salad/com.data.salad.iml" filepath="$PROJECT_DIR$/salad/com.data.salad.iml" />
       <module fileurl="file://$PROJECT_DIR$/dataLearn.iml" filepath="$PROJECT_DIR$/dataLearn.iml" />
     </modules>
   </component>
