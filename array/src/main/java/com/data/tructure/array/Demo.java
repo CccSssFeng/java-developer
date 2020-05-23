@@ -2,48 +2,65 @@ package com.data.tructure.array;
 
 import org.junit.Test;
 
-import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Demo {
 
 
     @Test
     public void test() throws Exception {
-        int[][] array = {{3, 7}, {2, 9}, {8, 10}};
-        System.out.println(minNum(array));
+        // 1 2 2 3 4 4 4
+
     }
 
-    //     3  7
-    //  2          9
-    //          8    10
-    //      4            12
-    //               10      13
 
-    public int minNum(int[][] dates) {
 
-        if (dates == null || dates.length <= 0) {
-            return 0;
+
+
+
+
+
+
+
+
+
+
+    public int[] getTop(String[] array, int k) {
+        if (array == null || array.length == 0) {
+            return null;
         }
-        if (dates.length == 1) {
-            return 1;
-        }
-        int len = dates.length;
-        int[] start = new int[len];
-        int[] end = new int[len];
-        for (int i = 0; i < dates.length - 1; i++) {
-            start[i] = dates[i][0];
-            end[i] = dates[i][1];
-        }
-        Arrays.sort(start);
-        Arrays.sort(end);
-        int s = 0, e = 0;
-        for (; s < len; s++) {
-            if (end[s] > start[s]) {
-                e++;
+        HashMap<String, Integer> hashMap = new HashMap<>();
+
+
+        for (int i = 0; i < array.length; i++) {
+            if (hashMap.containsKey(array[i])) {
+                hashMap.put(array[i], hashMap.get(array[i]) + 1);
+            } else {
+                hashMap.put(array[i], 1);
             }
         }
-        return e;
+        return getNum(k, hashMap);
+
     }
+
+    public int[] getNum(int k, HashMap<String, Integer> hashMap) {
+        int[] nums = new int[k];
+        int max = 0;
+        String maxKey = "";
+        for (int i = 0; i < k; i++) {
+            for (Map.Entry<String, Integer> entry : hashMap.entrySet()) {
+                if (entry.getValue() > max) {
+                    max = entry.getValue();
+                    maxKey = entry.getKey();
+                }
+            }
+            hashMap.remove(maxKey);
+            nums[i] = max;
+        }
+        return nums;
+    }
+
 
 }
 
