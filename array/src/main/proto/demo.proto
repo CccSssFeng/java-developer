@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option java_package = "com.data.tructure.array.grpc";
+option java_outer_classname = "RPCDateServiceApi";
+option java_multiple_files = true;
+
+package com.data.tructure.array.grpc;
+
+
+
+// 服务接口定义，服务端和客户端都要遵守该接口进行通信
+service RPCDateService {
+  rpc getDate (RPCDateRequest) returns (RPCDateResponse) {}
+}
+
+// 定义消息（请求）
+message RPCDateRequest {
+  string userName = 1;
+}
+
+// 定义消息（响应）
+message RPCDateResponse {
+  string serverDate = 1;
+  uint32 sort = 2;
+}
