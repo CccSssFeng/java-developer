@@ -1,6 +1,7 @@
 package com.data.tructure.array.redis.分布式锁;
 
 import com.data.tructure.array.redis.jedis.JedisClient;
+
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.params.SetParams;
 
@@ -25,8 +26,6 @@ public class RedisLockUtil {
 
     /**
      * 上锁
-     *
-     * @param lockName
      */
     public static void lock(String lockName) {
         if (!tryLock(lockName, MAX_TIME_OUT)) {
@@ -68,14 +67,14 @@ public class RedisLockUtil {
      * end
      * <p>
      * 释放锁
-     *
-     * @param lockName
      */
     public static boolean unlock(String lockName) {
         Jedis jedis = JedisClient.getJedis();
         try {
-            String script = "if redis.call('get', KEYS[1]) == ARGV[1] then return redis.call('del', KEYS[1]) else return 0 end";
-            Object result = jedis.eval(script, Collections.singletonList(lockName), Collections.singletonList(uniqueValue));
+            String script =
+                    "if redis.call('get', KEYS[1]) == ARGV[1] then return redis.call('del', KEYS[1]) else return 0 end";
+            Object result =
+                    jedis.eval(script, Collections.singletonList(lockName), Collections.singletonList(uniqueValue));
             if (RELEASE_SUCCESS.equals(result)) {
                 return true;
             }

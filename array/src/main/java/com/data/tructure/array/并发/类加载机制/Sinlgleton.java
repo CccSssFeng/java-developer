@@ -11,7 +11,7 @@ public class Sinlgleton {
 
     private static Sinlgleton sinlgleton = new Sinlgleton();
 
-    private Sinlgleton(){
+    private Sinlgleton() {
         x++;
         y++;
     }
@@ -20,7 +20,7 @@ public class Sinlgleton {
         System.out.println("初始化");
     }
 
-    public static Sinlgleton getSinlgleton(){
+    public static Sinlgleton getSinlgleton() {
         return sinlgleton;
     }
 

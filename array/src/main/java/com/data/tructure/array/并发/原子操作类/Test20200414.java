@@ -21,7 +21,7 @@ public class Test20200414 {
         AtomicBoolean atomicBoolean = new AtomicBoolean();
         atomicBoolean.getAndSet(true);
 
-//      AtomicIntegerArray atomicIntegerArray = new AtomicIntegerArray();
+        //      AtomicIntegerArray atomicIntegerArray = new AtomicIntegerArray();
 
         AtomicReference atomicReference = new AtomicReference();
 

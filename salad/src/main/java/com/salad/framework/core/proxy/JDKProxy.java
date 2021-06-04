@@ -1,6 +1,7 @@
 package com.salad.framework.core.proxy;
 
 import com.alibaba.fastjson.JSON;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.extern.log4j.Log4j;
@@ -68,6 +69,7 @@ public class JDKProxy implements InvocationHandler {
 
 
     public static <T> T create(final Class clazz, String ip, int port) {
-        return (T) Proxy.newProxyInstance(JDKProxy.class.getClassLoader(), clazz.getInterfaces(), new JDKProxy(clazz, ip, port));
+        return (T) Proxy.newProxyInstance(JDKProxy.class.getClassLoader(), clazz.getInterfaces(),
+                new JDKProxy(clazz, ip, port));
     }
 }

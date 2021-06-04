@@ -20,12 +20,15 @@ public class Test20200217 {
         int c = array.length - 1;
         int r = 0;
         while (r < array.length && c >= 0) {
-            if (array[r][c] == target)
+            if (array[r][c] == target) {
                 return true;
-            if (array[r][c] > target)
+            }
+            if (array[r][c] > target) {
                 c--;
-            if (array[r][c] < target)
+            }
+            if (array[r][c] < target) {
                 r++;
+            }
         }
         return false;
     }

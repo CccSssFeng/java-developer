@@ -1,6 +1,7 @@
 package com.data.tructure.array.算法.二叉树.二叉树遍历;
 
 import com.data.tructure.array.算法.二叉树.BinaryTreeNode;
+
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -12,11 +13,11 @@ public class BackOrder {
 
     @Test
     public void test() throws Exception {
-//        preSort(BinaryTreeNode.getTreeNode());
-//        List<Integer> list = preOrder(BinaryTreeNode.getTreeNode());
-//        centerOrder(BinaryTreeNode.getTreeNode());
-//        List<Integer> list = centerOrder2(BinaryTreeNode.getTreeNode());
-//        backOrder(BinaryTreeNode.getTreeNode());
+        //        preSort(BinaryTreeNode.getTreeNode());
+        //        List<Integer> list = preOrder(BinaryTreeNode.getTreeNode());
+        //        centerOrder(BinaryTreeNode.getTreeNode());
+        //        List<Integer> list = centerOrder2(BinaryTreeNode.getTreeNode());
+        //        backOrder(BinaryTreeNode.getTreeNode());
         List<Integer> list = backOrder2(BinaryTreeNode.getTreeNode());
         list.stream().forEach(System.out::println);
     }
@@ -128,8 +129,8 @@ public class BackOrder {
         stack.push(4);
         System.out.println(stack.peek());
 
-//        while (!stack.empty()) {
-//
-//        }
+        //        while (!stack.empty()) {
+        //
+        //        }
     }
 }

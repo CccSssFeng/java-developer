@@ -37,7 +37,9 @@ public class KafkaConsumerDemo {
         while (true) {
             ConsumerRecords<String, String> records = consumer.poll(KafkaDemo.CONSUMER_POLL_TIME_OUT);
             records.forEach((ConsumerRecord<String, String> record) -> {
-                System.out.println("consumer: key ===" + record.key() + " topic :【" + record.topic() + "】 value: " + record.value());
+                System.out.println(
+                        "consumer: key ===" + record.key() + " topic :【" + record.topic() + "】 value: " + record
+                                .value());
             });
         }
     }

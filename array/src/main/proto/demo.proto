@@ -4,7 +4,7 @@ option java_package = "com.data.tructure.array.grpc";
 option java_outer_classname = "RPCDateServiceApi";
 option java_multiple_files = true;
 
-package com.data.tructure.array.grpc;
+package com . data. tructure. array. grpc;
 
 
 
@@ -21,5 +21,5 @@ message RPCDateRequest {
 // 定义消息（响应）
 message RPCDateResponse {
   string serverDate = 1;
-  uint32 sort = 2;
+  uint32 sort       = 2;
 }

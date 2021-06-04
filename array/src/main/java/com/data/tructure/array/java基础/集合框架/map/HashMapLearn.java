@@ -1,6 +1,7 @@
 package com.data.tructure.array.java基础.集合框架.map;
 
 import lombok.Synchronized;
+
 import org.junit.Test;
 
 import java.util.Collection;
@@ -29,14 +30,12 @@ public class HashMapLearn {
         System.out.println(a.length);
         ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
 
-        Collections.synchronizedMap(hashMap).put("hello","疯狂造轮子");
+        Collections.synchronizedMap(hashMap).put("hello", "疯狂造轮子");
 
     }
 
     /**
      * 模拟JDK7 hashMap复制链表到新数组逻辑测试
-     *
-     * @throws Exception
      */
     @Test
     public void testTransfer() throws Exception {
@@ -83,8 +82,8 @@ public class HashMapLearn {
                 if (rehash) {
                     e.hash = null == e.key ? 0 : hash(e.key);
                 }
-//                指定下标位置
-//                int i = indexFor(e.hash, newCapacity);
+                //                指定下标位置
+                //                int i = indexFor(e.hash, newCapacity);
                 int i = 3;
                 e.next = newTable[i];
                 newTable[i] = e;
@@ -113,7 +112,7 @@ public class HashMapLearn {
 
     @Test
     public void test6() throws Exception {
-//        System.out.println(tableSizeFor(134));
+        //        System.out.println(tableSizeFor(134));
 
         String key = "123";
         System.out.println(key.hashCode() & (16 - 1));
@@ -148,7 +147,7 @@ public class HashMapLearn {
             Collections.synchronizedMap(hashMap).put("hello.txt" + i, i);
         }
 
-//        hashMap.forEach((k, v) -> System.out.println(k + " - " + v));
+        //        hashMap.forEach((k, v) -> System.out.println(k + " - " + v));
 
         // 2. HashMap可以使用null作为key，而 HashTable 则不允许null作为key
 
@@ -204,8 +203,8 @@ public class HashMapLearn {
     }
 
     static final int hash(Object key) {
-//        int h ;
-//        return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
+        //        int h ;
+        //        return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
 
         int h = key.hashCode();
         int c = h >>> 16;

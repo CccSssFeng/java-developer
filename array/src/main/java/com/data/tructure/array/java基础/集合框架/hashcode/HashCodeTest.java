@@ -6,7 +6,7 @@ import org.junit.Test;
  * @author cuishifeng
  * @date 2019-04-08
  */
-public class HashCodeTest{
+public class HashCodeTest {
 
 
     @Test

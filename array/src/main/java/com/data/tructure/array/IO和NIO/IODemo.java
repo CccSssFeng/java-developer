@@ -15,8 +15,6 @@ public class IODemo {
 
     /**
      * =============== 字节流 ================
-     *
-     * @throws Exception
      */
 
     @Test
@@ -60,8 +58,6 @@ public class IODemo {
 
     /**
      * ============= 字符流 ==============
-     *
-     * @throws Exception
      */
 
     @Test

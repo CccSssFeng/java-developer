@@ -15,17 +15,6 @@ public class Demo {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
     public int[] getTop(String[] array, int k) {
         if (array == null || array.length == 0) {
             return null;

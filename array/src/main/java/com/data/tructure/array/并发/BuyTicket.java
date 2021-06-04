@@ -1,7 +1,9 @@
 package com.data.tructure.array.并发;
 
 import com.data.tructure.array.并发.Lock.AQS.MyAbstractQueuedSynchronizer;
+
 import org.junit.Test;
+
 import sun.misc.Unsafe;
 
 import java.util.concurrent.*;
@@ -35,7 +37,8 @@ public class BuyTicket implements Runnable {
             flag = false;
             return;
         }
-        System.out.println(Thread.currentThread().getName() + "-拿到了第" + ticketNum-- + "票 卖出" + atomicInteger.addAndGet(1));
+        System.out.println(
+                Thread.currentThread().getName() + "-拿到了第" + ticketNum-- + "票 卖出" + atomicInteger.addAndGet(1));
         if (atomicInteger.get() > 10) {
             System.err.println("== 超卖票 ==");
         }
@@ -47,15 +50,15 @@ public class BuyTicket implements Runnable {
     public static void main(String[] args) {
         BuyTicket synTest = new BuyTicket();
 
-//        Thread A = new Thread(synTest, "A");
-//        Thread B = new Thread(synTest, "B");
-//        Thread C = new Thread(synTest, "C");
-//        Thread D = new Thread(synTest, "D");
-//
-//        A.start();
-//        B.start();
-//        C.start();
-//        D.start();
+        //        Thread A = new Thread(synTest, "A");
+        //        Thread B = new Thread(synTest, "B");
+        //        Thread C = new Thread(synTest, "C");
+        //        Thread D = new Thread(synTest, "D");
+        //
+        //        A.start();
+        //        B.start();
+        //        C.start();
+        //        D.start();
 
         ExecutorService executorService = Executors.newCachedThreadPool();
         for (int i = 0; i < 5; i++) {
@@ -103,7 +106,7 @@ public class BuyTicket implements Runnable {
                     System.out.println("thread name :" + Thread.currentThread().getName() + " i: " + finalI);
                     try {
                         cyclicBarrier.await();
-//                        countDownLatch.countDown();
+                        //                        countDownLatch.countDown();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -111,7 +114,7 @@ public class BuyTicket implements Runnable {
             });
         }
 
-//        countDownLatch.await();
+        //        countDownLatch.await();
         cyclicBarrier.await();
         System.out.println("hello yes");
 

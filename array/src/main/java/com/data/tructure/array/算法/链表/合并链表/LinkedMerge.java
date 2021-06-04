@@ -1,6 +1,7 @@
 package com.data.tructure.array.算法.链表.合并链表;
 
 import com.data.tructure.array.算法.链表.Node;
+
 import org.junit.Test;
 
 /**
@@ -40,12 +41,12 @@ public class LinkedMerge {
         Node tNode2 = new Node(6, tNode3);
         Node tNode1 = new Node(5, tNode2);
 
-//        Node head = merge(oneNode1, tNode1);
-//        list(head);
+        //        Node head = merge(oneNode1, tNode1);
+        //        list(head);
 
-//        Node head = mergeNode(oneNode1, tNode1);
-//        System.out.println("");
-//        Node.nodePrint(head);
+        //        Node head = mergeNode(oneNode1, tNode1);
+        //        System.out.println("");
+        //        Node.nodePrint(head);
 
         Node head = mergeNode2(oneNode1, tNode1);
         Node.nodePrint(head);
@@ -53,10 +54,6 @@ public class LinkedMerge {
 
     /**
      * 递归
-     *
-     * @param head1
-     * @param head2
-     * @return
      */
     public Node mergeNode(Node head1, Node head2) {
 
@@ -88,10 +85,6 @@ public class LinkedMerge {
 
     /**
      * 循环
-     *
-     * @param node1
-     * @param node2
-     * @return
      */
     public Node mergeNode2(Node node1, Node node2) {
         if (node1 == null) {
@@ -125,13 +118,6 @@ public class LinkedMerge {
         cur.next = node1 == null ? node2 : node1;
         return head;
     }
-
-
-
-
-
-
-
 
 
     public void list(Node node) {

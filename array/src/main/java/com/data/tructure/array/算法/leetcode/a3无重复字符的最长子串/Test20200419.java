@@ -10,7 +10,7 @@ public class Test20200419 {
     @Test
     public void test() throws Exception {
         String s = "abcabcbb";
-        s= " ";
+        s = " ";
         System.out.println(lengthOfLongestSubstring(s));
     }
 

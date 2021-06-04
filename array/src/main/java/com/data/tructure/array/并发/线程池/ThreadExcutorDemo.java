@@ -50,7 +50,7 @@ public class ThreadExcutorDemo {
                 }
             });
         }
-//        TimeUnit.SECONDS.sleep(20);
+        //        TimeUnit.SECONDS.sleep(20);
     }
 
 

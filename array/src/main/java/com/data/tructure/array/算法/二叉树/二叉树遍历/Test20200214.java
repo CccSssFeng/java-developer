@@ -1,6 +1,7 @@
 package com.data.tructure.array.算法.二叉树.二叉树遍历;
 
 import com.data.tructure.array.算法.二叉树.BinaryTreeNode;
+
 import org.junit.Test;
 
 import java.util.Stack;
@@ -9,22 +10,20 @@ public class Test20200214 {
 
     @Test
     public void test() throws Exception {
-//        先序遍历
-//        first(BinaryTreeNode.getTreeNode());
-//        中序遍历
-//        center(BinaryTreeNode.getTreeNode());
-//        后序遍历
-//        tail((BinaryTreeNode.getTreeNode()));
-//        非递归先序遍历
-//        first2(BinaryTreeNode.getTreeNode());
-//        center2(BinaryTreeNode.getTreeNode());
+        //        先序遍历
+        //        first(BinaryTreeNode.getTreeNode());
+        //        中序遍历
+        //        center(BinaryTreeNode.getTreeNode());
+        //        后序遍历
+        //        tail((BinaryTreeNode.getTreeNode()));
+        //        非递归先序遍历
+        //        first2(BinaryTreeNode.getTreeNode());
+        //        center2(BinaryTreeNode.getTreeNode());
         after2(BinaryTreeNode.getTreeNode());
     }
 
     /**
      * 先序遍历
-     *
-     * @param root
      */
     public void first(BinaryTreeNode root) {
         if (root != null) {
@@ -36,8 +35,6 @@ public class Test20200214 {
 
     /**
      * 中序遍历
-     *
-     * @param root
      */
     public void center(BinaryTreeNode root) {
         if (root != null) {
@@ -49,8 +46,6 @@ public class Test20200214 {
 
     /**
      * 后序遍历
-     *
-     * @param root
      */
     public void tail(BinaryTreeNode root) {
         if (root != null) {

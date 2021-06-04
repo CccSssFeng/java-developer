@@ -16,7 +16,7 @@ public class LeetCode {
             for (int i = 0; i < nums.length; i++) {
                 int result = target - nums[i];
                 if (hashMap.containsKey(result)) {
-                    return new int[]{hashMap.get(result), i};
+                    return new int[] {hashMap.get(result), i};
                 }
                 hashMap.put(nums[i], i);
             }
@@ -31,27 +31,23 @@ public class LeetCode {
 
         public static void main(String[] args) {
 
-//            ListNode l3 = new ListNode(3);
+            //            ListNode l3 = new ListNode(3);
             ListNode l2 = new ListNode(8);
-//            l2.next = l3;
+            //            l2.next = l3;
             ListNode l1 = new ListNode(9);
             l1.next = l2;
 
             ListNode l6 = new ListNode(1);
-//            ListNode l5 = new ListNode(6);
-//            l5.next = l6;
-//            ListNode l4 = new ListNode(5);
-//            l4.next = l5;
+            //            ListNode l5 = new ListNode(6);
+            //            l5.next = l6;
+            //            ListNode l4 = new ListNode(5);
+            //            l4.next = l5;
             ListNode listNode = addTwoNumbers2(l1, l6);
             getList(listNode);
         }
 
         /**
          * 循环
-         *
-         * @param l1
-         * @param l2
-         * @return
          */
         public static ListNode addTwoNumbers2(ListNode l1, ListNode l2) {
             ListNode root = new ListNode(0);
@@ -67,8 +63,12 @@ public class LeetCode {
                 cursor.next = sumNode;
                 cursor = sumNode;
 
-                if (l1 != null) l1 = l1.next;
-                if (l2 != null) l2 = l2.next;
+                if (l1 != null) {
+                    l1 = l1.next;
+                }
+                if (l2 != null) {
+                    l2 = l2.next;
+                }
             }
 
             return root.next;
@@ -76,10 +76,6 @@ public class LeetCode {
 
         /**
          * 循环
-         *
-         * @param l1
-         * @param l2
-         * @return
          */
         public static ListNode addTwoNumbers3(ListNode l1, ListNode l2) {
             int goOne = 0;
@@ -116,21 +112,22 @@ public class LeetCode {
 
         /**
          * 递归方式
-         *
-         * @param l1
-         * @param l2
-         * @return
          */
         public ListNode addTwoNumbers4(ListNode l1, ListNode l2) {
-            if (l1 == null && l2 == null) return null;
-            if (l1 == null) l1 = new ListNode(0);
+            if (l1 == null && l2 == null) {
+                return null;
+            }
+            if (l1 == null) {
+                l1 = new ListNode(0);
+            }
             l1.val += l2 == null ? 0 : l2.val;
             if (l1.val > 9) {
                 l1.val = l1.val % 10;
-                if (l1.next == null)
+                if (l1.next == null) {
                     l1.next = new ListNode(1);
-                else
+                } else {
                     l1.next.val += 1;
+                }
                 l1.next = addTwoNumbers4(l1.next, l2 == null ? null : l2.next);
             } else {
                 l1.next = addTwoNumbers4(l1.next, l2 == null ? null : l2.next);

@@ -11,9 +11,9 @@ import org.junit.Test;
 public class BubbleSort {
 
     public static void main(String[] args) {
-//        sort();
-//        sort2();
-//        sort3();
+        //        sort();
+        //        sort2();
+        //        sort3();
     }
 
     /**

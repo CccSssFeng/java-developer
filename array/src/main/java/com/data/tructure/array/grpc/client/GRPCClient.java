@@ -3,6 +3,7 @@ package com.data.tructure.array.grpc.client;
 import com.data.tructure.array.grpc.RPCDateRequest;
 import com.data.tructure.array.grpc.RPCDateResponse;
 import com.data.tructure.array.grpc.RPCDateServiceGrpc;
+
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 

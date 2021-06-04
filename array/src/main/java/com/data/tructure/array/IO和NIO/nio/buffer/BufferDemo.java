@@ -135,11 +135,11 @@ public class BufferDemo {
         System.out.println("limit   :" + buffer.limit());
         System.out.println("capacity:" + buffer.capacity());
 
-//        byte[] bytes2 = new byte[str.length()];
-//        buffer.get(bytes2);
-//        System.out.println(new String(bytes2));
-//
-//        buffer.clear();
+        //        byte[] bytes2 = new byte[str.length()];
+        //        buffer.get(bytes2);
+        //        System.out.println(new String(bytes2));
+        //
+        //        buffer.clear();
 
         String s = "66";
         buffer.put(s.getBytes());

@@ -33,8 +33,9 @@ public class Test20200217 {
                 newChar[index + 1] = '2';
                 newChar[index + 2] = '0';
                 index = index + 2;
-            } else
+            } else {
                 newChar[index] = str.charAt(i);
+            }
         }
 
         return String.valueOf(newChar);

@@ -13,13 +13,15 @@ public class Test20200228 {
     }
 
     public int maxDepth(BinaryTreeNode treeNode) {
-        if (treeNode == null)
+        if (treeNode == null) {
             return 0;
+        }
         int left = maxDepth(treeNode.left);
         int right = maxDepth(treeNode.right);
         int max = left;
-        if (max < right)
+        if (max < right) {
             max = right;
+        }
         return max + 1;
     }
 
@@ -33,16 +35,19 @@ public class Test20200228 {
     }
 
     public int maxNode(BinaryTreeNode treeNode) {
-        if (treeNode == null)
+        if (treeNode == null) {
             return -1;
+        }
         int value = treeNode.data;
         int left = maxNode(treeNode.left);
         int right = maxNode(treeNode.right);
         int max = value;
-        if (max < left)
+        if (max < left) {
             max = left;
-        if (max < right)
+        }
+        if (max < right) {
             max = right;
+        }
         return max;
     }
 

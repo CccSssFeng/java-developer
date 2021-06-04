@@ -18,10 +18,10 @@ public class Client {
 
     @Test
     public void test() throws Exception {
-        System.out.println("time:" + (long) 1000 * 3600 * 24 * 30*2);
+        System.out.println("time:" + (long) 1000 * 3600 * 24 * 30 * 2);
         long add = 2592000000l;
         long time = 1582438727000L;
-        System.out.println("time add:" + (time + add*2));
+        System.out.println("time add:" + (time + add * 2));
 
     }
 }

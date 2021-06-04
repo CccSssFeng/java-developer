@@ -13,9 +13,9 @@ public class Test20200411 {
         int[] array = {3, 2, 5, 1, 6, 4, 7};
 
         // 冒泡排序
-//        sort(array);
-//        chooseSort(array);
-//        insertSort(array);
+        //        sort(array);
+        //        chooseSort(array);
+        //        insertSort(array);
         quicklySort(array, 0, array.length - 1);
         System.out.println(Arrays.toString(array));
 
@@ -23,8 +23,9 @@ public class Test20200411 {
 
     public void sort(int[] array) {
 
-        if (array == null || array.length <= 1)
+        if (array == null || array.length <= 1) {
             return;
+        }
 
         for (int i = 0; i < array.length; i++) {
             for (int j = array.length - 1; j > i; j--) {
@@ -38,13 +39,15 @@ public class Test20200411 {
     }
 
     public void chooseSort(int[] array) {
-        if (array == null || array.length <= 1)
+        if (array == null || array.length <= 1) {
             return;
+        }
         for (int i = 0; i < array.length; i++) {
             int min = i;
             for (int j = array.length - 1; j > i; j--) {
-                if (array[min] > array[j])
+                if (array[min] > array[j]) {
                     min = j;
+                }
             }
             if (min != i) {
                 int temp = array[i];
@@ -55,8 +58,9 @@ public class Test20200411 {
     }
 
     public void insertSort(int[] array) {
-        if (array == null || array.length <= 1)
+        if (array == null || array.length <= 1) {
             return;
+        }
         for (int i = 0; i < array.length - 1; i++) {
             for (int j = i + 1; j > 0; j--) {
                 if (array[j] < array[j - 1]) {

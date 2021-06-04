@@ -25,6 +25,7 @@ public class DeadLockPaiCha {
     static class Tea implements Runnable {
 
         static ReentrantLock lock = new ReentrantLock();
+
         @Override
         public void run() {
             lock.lock();
@@ -32,7 +33,7 @@ public class DeadLockPaiCha {
         }
     }
 
-    static class DeadLock implements Runnable{
+    static class DeadLock implements Runnable {
 
         public int flag = 1;
         /**
@@ -68,6 +69,7 @@ public class DeadLockPaiCha {
                 }
             }
         }
+
         public static void main(String[] args) {
 
             DeadLock td1 = new DeadLock();

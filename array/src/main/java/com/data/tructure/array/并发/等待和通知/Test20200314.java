@@ -2,8 +2,7 @@ package com.data.tructure.array.并发.等待和通知;
 
 import org.junit.Test;
 
-public class Test20200314 extends Thread{
-
+public class Test20200314 extends Thread {
 
 
     @Test
@@ -12,7 +11,7 @@ public class Test20200314 extends Thread{
 
     }
 
-    public synchronized void talk(){
+    public synchronized void talk() {
         try {
             this.wait();
         } catch (InterruptedException e) {
@@ -22,8 +21,7 @@ public class Test20200314 extends Thread{
     }
 
 
-    static class Demo extends Thread{
-
+    static class Demo extends Thread {
 
 
     }

@@ -17,9 +17,6 @@ public class Test20200311 {
     /**
      * 使用hash字典查找
      * 时间复杂度 O(n) 空间复杂度 O(n)
-     *
-     * @param nums
-     * @return
      */
     public int findRepeatNum(int[] nums) {
         if (nums == null || nums.length <= 1) {
@@ -39,9 +36,6 @@ public class Test20200311 {
      * 时间和空间复杂度 都是 O(n)
      * 但是比hash表空间使用少  hashMap 默认就要开辟 16 长度的数组
      * 达到阈值 还要扩容 数据结构对象也多
-     *
-     * @param nums
-     * @return
      */
     public int findRepeatNum2(int[] nums) {
         if (nums == null || nums.length <= 1) {
@@ -63,7 +57,7 @@ public class Test20200311 {
     @Test
     public void test() throws Exception {
         int[] array = {2, 3, 1, 0, 2, 5, 3};
-//        System.out.println(findRepeatNum(array));
+        //        System.out.println(findRepeatNum(array));
         System.out.println(findRepeatNum2(array));
     }
 }

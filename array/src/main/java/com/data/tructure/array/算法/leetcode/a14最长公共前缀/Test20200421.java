@@ -24,7 +24,7 @@ public class Test20200421 {
             boolean isSame = true;
             for (int j = 0; j < strs.length; j++) {
                 int le = strs[j].length() - 1;
-                if (i>le || strs[j].charAt(i) != s) {
+                if (i > le || strs[j].charAt(i) != s) {
                     isSame = false;
                     break;
                 }

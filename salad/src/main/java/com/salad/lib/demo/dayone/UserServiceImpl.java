@@ -7,12 +7,10 @@ package com.salad.lib.demo.dayone;
 public class UserServiceImpl implements UserService {
 
 
-
     @Override
     public String getName(String name) {
         return "hello: " + name;
     }
-
 
 
 }

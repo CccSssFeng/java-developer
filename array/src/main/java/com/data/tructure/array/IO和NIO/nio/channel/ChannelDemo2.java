@@ -24,7 +24,8 @@ public class ChannelDemo2 {
     }
 
 
-    public static void channelCopy(ReadableByteChannel readableByteChannel, WritableByteChannel writableByteChannel) throws IOException {
+    public static void channelCopy(ReadableByteChannel readableByteChannel, WritableByteChannel writableByteChannel)
+            throws IOException {
         ByteBuffer buffer = ByteBuffer.allocate(10);
         while (readableByteChannel.read(buffer) != -1) {
             System.out.println("one - position:" + buffer.position() + " - limit:" + buffer.limit());

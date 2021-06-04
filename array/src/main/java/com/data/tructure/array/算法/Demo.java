@@ -14,8 +14,6 @@ public class Demo {
 
     /**
      * 冒泡排序
-     *
-     * @throws Exception
      */
     @Test
     public void maopaotest() throws Exception {

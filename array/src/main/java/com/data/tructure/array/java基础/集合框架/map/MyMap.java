@@ -20,7 +20,6 @@ public class MyMap<K, V> extends AbstractMap<K, V>
     static final int DEFAULT_INITIAL_CAPACITY = 1 << 4;
 
 
-
     @Override
     public int size() {
         return 0;

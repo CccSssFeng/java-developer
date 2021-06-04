@@ -1,6 +1,7 @@
 package com.data.tructure.array.算法.二叉树.二叉树遍历;
 
 import com.data.tructure.array.算法.二叉树.BinaryTreeNode;
+
 import org.junit.Test;
 
 import java.util.Stack;
@@ -9,10 +10,10 @@ public class Test20200414 {
 
     @Test
     public void test() throws Exception {
-//        backOrder(BinaryTreeNode.getTreeNode());
-//        System.out.println(getHight(BinaryTreeNode.getTreeNode()));
-//        System.out.println(getNodeNum(BinaryTreeNode.getTreeNode()));
-//        preOrder(BinaryTreeNode.getTreeNode());
+        //        backOrder(BinaryTreeNode.getTreeNode());
+        //        System.out.println(getHight(BinaryTreeNode.getTreeNode()));
+        //        System.out.println(getNodeNum(BinaryTreeNode.getTreeNode()));
+        //        preOrder(BinaryTreeNode.getTreeNode());
         centerOrder(BinaryTreeNode.getTreeNode());
     }
 
@@ -52,10 +53,12 @@ public class Test20200414 {
             BinaryTreeNode node = stack.pop();
             if (node != null) {
                 System.out.println(node.data);
-                if (node.right != null)
+                if (node.right != null) {
                     stack.add(node.right);
-                if (node.left != null)
+                }
+                if (node.left != null) {
                     stack.add(node.left);
+                }
             }
         }
     }

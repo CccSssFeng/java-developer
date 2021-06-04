@@ -61,7 +61,8 @@ public class KafkaDemo {
             ProducerRecord<String, String> record = null;
             while (true) {
                 TimeUnit.SECONDS.sleep(2);
-                record = new ProducerRecord<String, String>(PRODUCER_TOPIC, "hello send msg: " + new Random().nextInt(100));
+                record = new ProducerRecord<String, String>(PRODUCER_TOPIC,
+                        "hello send msg: " + new Random().nextInt(100));
                 //发送消息
                 producer.send(record, new Callback() {
                     @Override
@@ -69,12 +70,13 @@ public class KafkaDemo {
                         if (null != e) {
                             System.out.println("send error" + e.getMessage());
                         } else {
-                            System.out.println(String.format("offset:%s,partition:%s", recordMetadata.offset(), recordMetadata.partition()));
+                            System.out.println(String.format("offset:%s,partition:%s", recordMetadata.offset(),
+                                    recordMetadata.partition()));
                         }
                     }
                 });
             }
-//            producer.close();
+            //            producer.close();
         }
     }
 

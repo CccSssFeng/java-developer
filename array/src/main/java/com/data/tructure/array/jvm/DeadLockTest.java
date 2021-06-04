@@ -16,7 +16,7 @@ public class DeadLockTest {
         Thread thread2 = new Thread(new LockTwo(), "线程2");
         thread1.start();
         thread2.start();
-//        new DeadLockTest().deadLock();
+        //        new DeadLockTest().deadLock();
     }
 
 

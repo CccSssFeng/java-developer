@@ -35,7 +35,7 @@ public class JDKDynamicProxy implements InvocationHandler {
 
     public static void main(String[] args) {
 
-        HelloService helloService =  proxy(HelloServiceImpl.class);
+        HelloService helloService = proxy(HelloServiceImpl.class);
         String result = helloService.sayHello("tom");
         System.out.println(result);
 

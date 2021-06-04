@@ -1,6 +1,7 @@
 package com.data.tructure.array.算法.链表.判断链表是否有环;
 
 import com.data.tructure.array.算法.链表.Node;
+
 import org.junit.Test;
 
 import java.util.HashSet;
@@ -22,9 +23,6 @@ public class Demo {
 
     /**
      * 快慢指针
-     *
-     * @param node
-     * @return
      */
     public boolean fastSlowLoop(Node node) {
         if (node == null) {
@@ -44,9 +42,6 @@ public class Demo {
 
     /**
      * 根据hashSet长度变化判断是否有环
-     *
-     * @param node
-     * @return
      */
     public boolean isLoop(Node node) {
         if (node == null) {

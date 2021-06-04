@@ -4,8 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/array/array.iml" filepath="$PROJECT_DIR$/array/array.iml" />
       <module fileurl="file://$PROJECT_DIR$/bubble-sort/bubble-sort.iml" filepath="$PROJECT_DIR$/bubble-sort/bubble-sort.iml" />
-      <module fileurl="file://$PROJECT_DIR$/salad/com.data.salad.iml" filepath="$PROJECT_DIR$/salad/com.data.salad.iml" />
-      <module fileurl="file://$PROJECT_DIR$/dataLearn.iml" filepath="$PROJECT_DIR$/dataLearn.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../efficient-tool/efficient-tool.iml" filepath="$PROJECT_DIR$/../efficient-tool/efficient-tool.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tool/tool.iml" filepath="$PROJECT_DIR$/tool/tool.iml" />
     </modules>
   </component>
 </project>

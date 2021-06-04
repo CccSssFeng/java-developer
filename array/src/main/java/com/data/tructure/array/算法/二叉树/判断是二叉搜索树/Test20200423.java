@@ -1,6 +1,7 @@
 package com.data.tructure.array.算法.二叉树.判断是二叉搜索树;
 
 import com.data.tructure.array.算法.二叉树.BinaryTreeNode;
+
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -24,7 +25,9 @@ public class Test20200423 {
         }
         return false;
     }
+
     public static boolean flag = true;
+
     public boolean isValidBST(BinaryTreeNode root) {
         if (root == null) {
             return true;

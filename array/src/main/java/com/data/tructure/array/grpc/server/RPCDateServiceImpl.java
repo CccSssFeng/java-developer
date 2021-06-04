@@ -3,6 +3,7 @@ package com.data.tructure.array.grpc.server;
 import com.data.tructure.array.grpc.RPCDateRequest;
 import com.data.tructure.array.grpc.RPCDateResponse;
 import com.data.tructure.array.grpc.RPCDateServiceGrpc;
+
 import io.grpc.stub.StreamObserver;
 
 /**
@@ -17,8 +18,8 @@ public class RPCDateServiceImpl extends RPCDateServiceGrpc.RPCDateServiceImplBas
 
         RPCDateResponse rpcDateResponse = RPCDateResponse.newBuilder()
                 //  " 今天是 " + DateFormatUtils.format(new Date(), "yyyy-MM-dd")
-                .setServerDate("欢迎 " + request.getUserName() )
-//                .setSort(RandomUtils.nextInt(0, 10))
+                .setServerDate("欢迎 " + request.getUserName())
+                //                .setSort(RandomUtils.nextInt(0, 10))
                 .build();
         System.out.println(rpcDateResponse.getServerDate());
         responseObserver.onNext(rpcDateResponse);

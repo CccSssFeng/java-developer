@@ -1,6 +1,7 @@
 package com.data.tructure.array.算法.链表.逆转链表;
 
 import com.data.tructure.array.算法.链表.Node;
+
 import org.junit.Test;
 
 public class Test20200305 {
@@ -11,8 +12,8 @@ public class Test20200305 {
 
     @Test
     public void test() throws Exception {
-//        Node node = getNode(Node.getNode());
-//        Node.nodePrint(node);
+        //        Node node = getNode(Node.getNode());
+        //        Node.nodePrint(node);
 
         Node.nodePrint(reverseNode(Node.getNode()));
     }

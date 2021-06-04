@@ -47,9 +47,9 @@ public class ThreadPoolTest {
 
         ThreadPoolExecutor executor = new ThreadPoolExecutor(10, 20, 500,
                 TimeUnit.MILLISECONDS, new ArrayBlockingQueue(10), new ThreadPoolExecutor.AbortPolicy());
-//        executor.prestartAllCoreThreads();
+        //        executor.prestartAllCoreThreads();
 
-        System.out.println("初始化: "+executor);
+        System.out.println("初始化: " + executor);
         for (int i = 0; i < 15; i++) {
             executor.execute(new Runnable() {
                 @Override
@@ -64,24 +64,24 @@ public class ThreadPoolTest {
             });
         }
 
-        System.out.println("1: "+executor);
-        System.out.println("1: "+executor.getActiveCount());
+        System.out.println("1: " + executor);
+        System.out.println("1: " + executor.getActiveCount());
 
         TimeUnit.SECONDS.sleep(2);
 
-        System.out.println("2: "+executor);
-        System.out.println("2: "+executor.getActiveCount());
+        System.out.println("2: " + executor);
+        System.out.println("2: " + executor.getActiveCount());
 
 
-//        executor.shutdown();
-//        System.out.println(executor.isShutdown());
-//        System.out.println(executor);
-//
-//        System.out.println("executor.isTerminated(): " + executor.isTerminated());
-//        System.out.println(executor);
-//
-//        TimeUnit.SECONDS.sleep(2);
-//        System.out.println(executor);
+        //        executor.shutdown();
+        //        System.out.println(executor.isShutdown());
+        //        System.out.println(executor);
+        //
+        //        System.out.println("executor.isTerminated(): " + executor.isTerminated());
+        //        System.out.println(executor);
+        //
+        //        TimeUnit.SECONDS.sleep(2);
+        //        System.out.println(executor);
     }
 
     @Test

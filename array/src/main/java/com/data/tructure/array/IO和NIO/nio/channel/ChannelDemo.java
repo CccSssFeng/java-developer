@@ -70,8 +70,6 @@ public class ChannelDemo {
     /**
      * 管道静态方法获取管道
      * 操作直接缓冲区
-     *
-     * @throws Exception
      */
     @Test
     public void test2() throws Exception {
@@ -94,8 +92,6 @@ public class ChannelDemo {
 
     /**
      * 管道直接直接传输数据 操作直接缓冲区
-     *
-     * @throws Exception
      */
     @Test
     public void test3() throws Exception {
@@ -104,16 +100,15 @@ public class ChannelDemo {
                 FileChannel.open(Paths.get(path, "hello3.txt"),
                         StandardOpenOption.WRITE, StandardOpenOption.READ, StandardOpenOption.CREATE);
 
-//        inChannel.transferTo(0, inChannel.size(), outChannel);
+        //        inChannel.transferTo(0, inChannel.size(), outChannel);
         outChannel.transferFrom(inChannel, 0, inChannel.size());
     }
-
 
 
     public static void main(String[] args) throws IOException {
         ReadableByteChannel src = Channels.newChannel(System.in);
         WritableByteChannel dec = Channels.newChannel(System.out);
-//        channelCopy(src, dec);
+        //        channelCopy(src, dec);
         channelCopy2(src, dec);
         System.out.println("----------- end ------------");
         src.close();
@@ -133,10 +128,10 @@ public class ChannelDemo {
             buffer.flip();
             System.out.println("2 -  dec.write");
             dec.write(buffer);
-//
+            //
             buffer.compact();
             System.out.println("3 -  buffer.compact position: " + buffer.position() + " limit: " + buffer.limit());
-//            buffer.clear();
+            //            buffer.clear();
         }
 
         System.out.println("4 -  buffer.flip");

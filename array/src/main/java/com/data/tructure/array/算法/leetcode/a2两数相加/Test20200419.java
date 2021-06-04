@@ -1,6 +1,7 @@
 package com.data.tructure.array.算法.leetcode.a2两数相加;
 
 import com.data.tructure.array.算法.链表.Node;
+
 import org.junit.Test;
 
 public class Test20200419 {
@@ -8,7 +9,6 @@ public class Test20200419 {
 
     @Test
     public void test() throws Exception {
-
 
 
     }

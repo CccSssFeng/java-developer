@@ -20,7 +20,8 @@ public class DynamicProxy implements MethodInterceptor {
 
     public static <T> T DynamicProxy(Object object) {
         InvocationHandler invocationHandler = new MyInvocationHandler(object);
-        return (T) Proxy.newProxyInstance(object.getClass().getClassLoader(), object.getClass().getInterfaces(), invocationHandler);
+        return (T) Proxy.newProxyInstance(object.getClass().getClassLoader(), object.getClass().getInterfaces(),
+                invocationHandler);
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.data.tructure.array.算法.二叉树.二叉树遍历;
 
 import com.data.tructure.array.算法.二叉树.BinaryTreeNode;
+
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -17,9 +18,6 @@ public class NonRecursion {
 
     /**
      * 前序遍历 - 非递归
-     *
-     * @param treeNode
-     * @return
      */
     public List<Integer> preTraverseTree(BinaryTreeNode treeNode) {
         List<Integer> list = new ArrayList<>();
@@ -42,9 +40,6 @@ public class NonRecursion {
 
     /**
      * 中序遍历 - 非递归
-     *
-     * @param treeNode
-     * @return
      */
     public List<Integer> centerTraverseTree(BinaryTreeNode treeNode) {
         List<Integer> list = new ArrayList<>();
@@ -110,7 +105,7 @@ public class NonRecursion {
 
     @Test
     public void test3() throws Exception {
-//        center(BinaryTreeNode.getTreeNode());
+        //        center(BinaryTreeNode.getTreeNode());
         List<Integer> list = centerTraverseTree(BinaryTreeNode.getTreeNode());
         for (Integer value : list) {
             System.out.println(value);

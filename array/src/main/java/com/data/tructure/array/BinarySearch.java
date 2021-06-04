@@ -20,8 +20,6 @@ public class BinarySearch {
 
     /**
      * 无序插入
-     *
-     * @param value
      */
     public void insert(long value) {
         array[nElems] = value;
@@ -30,8 +28,6 @@ public class BinarySearch {
 
     /**
      * 有序插入 - 从小到达排序
-     *
-     * @param value
      */
     public void orderInsert(long value) {
         int j;
@@ -49,8 +45,6 @@ public class BinarySearch {
 
     /**
      * 插入 - 从大到小排序
-     *
-     * @param value
      */
     public void orderBigInsert(long value) {
         int j;
@@ -68,9 +62,6 @@ public class BinarySearch {
 
     /**
      * 二分查找
-     *
-     * @param searchKey
-     * @return
      */
     public int find(long searchKey) {
         int lowerBound = 0;

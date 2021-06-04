@@ -13,7 +13,7 @@ public class AbstractQueuedSynchronizerTest {
     @Test
     public void test() throws Exception {
 
-//        AbstractQueuedSynchronizer abstractQueuedSynchronizer = new NonReentrantLock();
+        //        AbstractQueuedSynchronizer abstractQueuedSynchronizer = new NonReentrantLock();
 
         ExecutorService executorService = Executors.newCachedThreadPool();
         ReentrantLock reentrantLock = new ReentrantLock();
@@ -49,7 +49,7 @@ public class AbstractQueuedSynchronizerTest {
             System.out.println("thread:" + Thread.currentThread().getName());
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             reentrantLock.unlock();
         }
     }

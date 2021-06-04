@@ -11,14 +11,14 @@ public class Test20200125 {
 
     @Test
     public void test() throws Exception {
-        int[] array = new int[]{3, 9, 2, 0, 7, 8, 5, 1, 4, 2, 6};
+        int[] array = new int[] {3, 9, 2, 0, 7, 8, 5, 1, 4, 2, 6};
 
-//        sort(array);
-//        chooseSort(array);
-//        insertSort(array);
-//        Arrays.sort(array);
-//        quicklySort(array, 0, array.length - 1);
-//        quicklySort2(array, 0, array.length - 1);
+        //        sort(array);
+        //        chooseSort(array);
+        //        insertSort(array);
+        //        Arrays.sort(array);
+        //        quicklySort(array, 0, array.length - 1);
+        //        quicklySort2(array, 0, array.length - 1);
         quicklySort3(array, 0, array.length - 1);
         System.out.println("array:" + Arrays.toString(array));
 
@@ -26,8 +26,6 @@ public class Test20200125 {
 
     /**
      * 冒泡排序
-     *
-     * @param array
      */
     public void sort(int[] array) {
         if (array == null || array.length <= 1) {
@@ -52,8 +50,6 @@ public class Test20200125 {
 
     /**
      * 选择排序
-     *
-     * @param array
      */
     public void chooseSort(int[] array) {
         if (array == null || array.length <= 1) {
@@ -77,8 +73,6 @@ public class Test20200125 {
 
     /**
      * 插入排序
-     *
-     * @param array
      */
     public void insertSort(int[] array) {
         for (int i = 1; i < array.length; i++) {

@@ -12,15 +12,16 @@ import java.nio.channels.FileChannel;
 public class TestScatter {
 
 
-    static String inPath = "D:\\kazhi\\dataStructure\\array\\src\\main\\java\\com\\data\\tructure\\array\\IO和NIO\\nio\\scattergather\\666.txt";
-    static String outPath = "D:\\kazhi\\dataStructure\\array\\src\\main\\java\\com\\data\\tructure\\array\\IO和NIO\\nio\\scattergather\\888.txt";
+    static String inPath =
+            "D:\\kazhi\\dataStructure\\array\\src\\main\\java\\com\\data\\tructure\\array\\IO和NIO\\nio\\scattergather"
+                    + "\\666.txt";
+    static String outPath =
+            "D:\\kazhi\\dataStructure\\array\\src\\main\\java\\com\\data\\tructure\\array\\IO和NIO\\nio\\scattergather"
+                    + "\\888.txt";
 
 
     /**
      * 分散
-     *
-     * @param args
-     * @throws IOException
      */
     public static void main(String[] args) throws IOException {
 

@@ -1,6 +1,7 @@
 package com.salad.framework.client;
 
 import com.salad.framework.core.proxy.JDKProxy;
+
 import lombok.extern.log4j.Log4j;
 
 import java.io.ObjectInputStream;
@@ -18,40 +19,15 @@ import java.net.Socket;
 public class ClientProxy {
 
 
-
     public static <T> T create(final Class<T> interfaceClass, final String host, final int port) throws Exception {
         log.info("客户端调用 host: " + host + " - port: " + port);
         return JDKProxy.create(interfaceClass, host, port);
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public <T> T proxy(Class<T> interfaceClass, final String host, final int port) {
         return (T) Proxy.newProxyInstance(interfaceClass.getClassLoader(),
-                new Class[]{interfaceClass},
+                new Class[] {interfaceClass},
                 new InvocationHandler() {
                     @Override
                     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
